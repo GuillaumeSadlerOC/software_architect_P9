@@ -3,12 +3,48 @@
 # Usage: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 #
 # Differences vs base:
-#   - Images are pulled from GHCR (no build on target host)
-#   - Resource limits applied
-#   - Logging rotation explicit (json-file, 10MB × 3)
-#   - Frontend bound to 127.0.0.1 behind a host-level reverse proxy (Caddy/Traefik)
+#   - Traefik: HTTPS via Let's Encrypt (TLS-ALPN-01), HTTP→HTTPS redirect,
+#              dashboard disabled, resource limits
+#   - Front:   HTTPS-only router, Let's Encrypt cert resolver
+#   - Back + postgres: resource limits, log rotation
+#   - No build: images are pulled from GHCR only
 # =============================================================================
 services:
+
+  traefik:
+    command: !override
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      # Automatic HTTP→HTTPS redirect at the entrypoint level (applies to
+      # every router on `web`, no per-router redirect needed).
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+      # Let's Encrypt — TLS-ALPN-01 challenge, doesn't need any extra port.
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL:?ACME_EMAIL is required}
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+      - --accesslog=true
+      - --log.level=WARN
+      - --api.dashboard=false   # dashboard disabled in prod
+    ports: !override
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik-letsencrypt:/letsencrypt
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   postgres:
     deploy:
@@ -23,8 +59,7 @@ services:
         max-file: "3"
 
   back:
-    # Override build: use the image pushed to GHCR.
-    build: !reset null
+    build: !reset null          # use GHCR image, don't build on the VPS
     pull_policy: always
     deploy:
       resources:
@@ -42,10 +77,14 @@ services:
   front:
     build: !reset null
     pull_policy: always
-    ports: !override
-      # Bind to loopback only — a host-level reverse proxy (Caddy/Nginx on
-      # the VPS) terminates TLS and forwards to 127.0.0.1:8081.
-      - "127.0.0.1:8081:8080"
+    labels: !override
+      - traefik.enable=true
+      - traefik.docker.network=orion-microcrm_edge-net
+      - traefik.http.routers.front.rule=Host(`${DOMAIN:?DOMAIN is required}`)
+      - traefik.http.routers.front.entrypoints=websecure
+      - traefik.http.routers.front.tls=true
+      - traefik.http.routers.front.tls.certresolver=letsencrypt
+      - traefik.http.services.front.loadbalancer.server.port=8080
     deploy:
       resources:
         limits:
@@ -56,3 +95,7 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
+volumes:
+  traefik-letsencrypt:
+    driver: local
