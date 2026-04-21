@@ -1,0 +1,102 @@
+name: Nightly
+
+# =============================================================================
+# Nightly regression & drift scan.
+#
+# Runs every day at 02:30 UTC — no user interference, off-hours, generates
+# steady-cadence data for the DORA metrics and KPI documentation.
+#
+# Re-exercises the three main workflows (CI back, CI front, security) on the
+# current main branch, then adds a dependency-drift report step on top.
+#
+# Purpose:
+#   - Catch CVEs disclosed overnight in dependency databases (NVD, Trivy DB).
+#   - Detect dependency updates published to npm / Maven Central.
+#   - Provide a reliable daily data point for KPI dashboards and trends.
+# =============================================================================
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 02:30 UTC every day
+  workflow_dispatch:
+
+concurrency:
+  group: nightly-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: read
+  security-events: write   # Security workflow needs it for SARIF upload.
+  actions: read
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Run the three main workflows on the nightly schedule.
+  # Reusing workflow_call keeps the source of truth single.
+  # ---------------------------------------------------------------------------
+  ci-back:
+    uses: ./.github/workflows/ci-backend.yml
+    secrets: inherit
+
+  ci-front:
+    uses: ./.github/workflows/ci-frontend.yml
+    secrets: inherit
+
+  security:
+    uses: ./.github/workflows/security.yml
+    secrets: inherit
+
+  # ---------------------------------------------------------------------------
+  # Report outdated dependencies (back + front) — useful for triage but too
+  # noisy to run on every push. Nightly cadence is ideal.
+  # ---------------------------------------------------------------------------
+  dependency-drift:
+    name: Dependency drift
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Gradle — report outdated dependencies
+        working-directory: back
+        run: |
+          # The 'dependencies' task is built-in; 'dependencyUpdates' (from the
+          # ben-manes plugin) would be richer but requires a plugin addition,
+          # which we skip to keep build.gradle untouched as per project rules.
+          ./gradlew --no-daemon dependencies --refresh-dependencies \
+            > ../gradle-deps.txt 2>&1 || true
+          echo "See gradle-deps.txt artifact for the full tree."
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: front/package-lock.json
+
+      - name: npm — report outdated dependencies
+        working-directory: front
+        run: |
+          npm ci --no-audit --no-fund
+          # 'npm outdated' exits non-zero when anything is out of date; that's
+          # the signal for the report, not a failure we want to gate on.
+          npm outdated --json > ../npm-outdated.json 2>/dev/null || true
+          npm outdated || true
+
+      - name: Upload drift reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-drift
+          path: |
+            gradle-deps.txt
+            npm-outdated.json
+          retention-days: 30
