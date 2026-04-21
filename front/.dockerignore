@@ -1,0 +1,24 @@
+# Node / Angular build outputs
+/node_modules
+/dist
+/.angular
+/coverage
+/.nyc_output
+npm-debug.log*
+yarn-debug.log*
+
+# IDE / editor
+.idea
+.vscode
+*.iml
+
+# Git
+.git
+.gitignore
+
+# Docs
+README.md
+
+# OS noise
+.DS_Store
+Thumbs.db
