@@ -86,24 +86,18 @@ jobs:
           path: back/build/reports/jacoco/test
           retention-days: 7
 
-      - name: SonarCloud scan
-        # Scan runs unconditionally: Sonar tracks coverage AND quality gate.
-        # A failing quality gate can block the PR via branch protection rules.
+      - name: SonarCloud scan & wait for quality gate
+        # Passes sonar.qualitygate.wait=true to the scanner, which polls the
+        # Compute Engine internally and exits non-zero if the gate is RED.
+        # Uses the scanner's own authenticated connection — no separate API
+        # call from a different action (which required Browse permission and
+        # failed with HTTP 403 when used with a Project Analysis Token).
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          # SonarCloud URL is the default — explicit here for self-hosted swaps.
           SONAR_HOST_URL: https://sonarcloud.io
         with:
           projectBaseDir: back
-
-      - name: SonarCloud quality gate check
-        # Fail the job if the quality gate status is not PASSED.
-        # Set continue-on-error: true if you want warnings without blocking.
-        uses: SonarSource/sonarqube-quality-gate-action@v1
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          scanMetadataReportFile: back/.scannerwork/report-task.txt
-
+          args: >
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.timeout=300
