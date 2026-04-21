@@ -1,0 +1,134 @@
+name: Docker Build & Push
+
+# =============================================================================
+# Builds both images, pushes to GHCR, generates SBOM + provenance, signs images
+# with cosign (keyless, OIDC-based). Triggered by:
+#   - push on main           ── publishes :sha, :main, :latest
+#   - git tag v*.*.*         ── publishes :semver + :latest
+#   - workflow_dispatch      ── manual (e.g. hotfix)
+#   - workflow_call          ── reused by deploy.yml
+# =============================================================================
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+  workflow_dispatch:
+  workflow_call:
+    outputs:
+      back-digest:
+        description: "Backend image digest"
+        value: ${{ jobs.build.outputs.back-digest }}
+      front-digest:
+        description: "Frontend image digest"
+        value: ${{ jobs.build.outputs.front-digest }}
+
+concurrency:
+  group: docker-build-${{ github.ref }}
+  cancel-in-progress: false   # Never cancel a running publish — releases are atomic.
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAMESPACE: ${{ github.repository_owner }}
+
+permissions:
+  contents: read
+  packages: write       # Push to GHCR.
+  id-token: write       # Required by cosign keyless (OIDC token exchange).
+  attestations: write   # Attach build provenance to the image.
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Gate: make sure CI passed on the same commit before we publish anything.
+  # Reusable workflows invoked via workflow_call — no code duplication.
+  # ---------------------------------------------------------------------------
+  ci-back:
+    uses: ./.github/workflows/ci-backend.yml
+    secrets: inherit
+  ci-front:
+    uses: ./.github/workflows/ci-frontend.yml
+    secrets: inherit
+
+  # ---------------------------------------------------------------------------
+  # Build, push, sign — matrix for back & front in parallel.
+  # ---------------------------------------------------------------------------
+  build:
+    name: Build ${{ matrix.component }}
+    runs-on: ubuntu-latest
+    needs: [ci-back, ci-front]
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - component: back
+            context: ./back
+          - component: front
+            context: ./front
+    outputs:
+      back-digest: ${{ steps.export.outputs.back-digest }}
+      front-digest: ${{ steps.export.outputs.front-digest }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-qemu-action@v3     # Needed for arm64 cross-build.
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute image metadata (tags + labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAMESPACE }}/orion-microcrm-${{ matrix.component }}
+          # The flavor latest=auto rule: only main branch gets :latest.
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix=sha-,format=short
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build & push
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          provenance: true           # SLSA provenance attestation
+          sbom: true                 # SBOM (SPDX format)
+          cache-from: type=gha,scope=${{ matrix.component }}
+          cache-to: type=gha,scope=${{ matrix.component }},mode=max
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign image (keyless, OIDC)
+        # Stores a signature next to the image in GHCR. No keys to manage.
+        # Verify with:
+        #   cosign verify ghcr.io/<owner>/orion-microcrm-<c>@<digest> \
+        #     --certificate-identity-regexp 'https://github.com/<owner>/...' \
+        #     --certificate-oidc-issuer https://token.actions.githubusercontent.com
+        env:
+          DIGEST: ${{ steps.build.outputs.digest }}
+          TAGS: ${{ steps.meta.outputs.tags }}
+        run: |
+          set -euo pipefail
+          # One signature per tag — Sigstore's transparency log records them all.
+          while IFS= read -r tag; do
+            [ -z "$tag" ] && continue
+            echo "Signing ${tag}@${DIGEST}"
+            cosign sign --yes "${tag}@${DIGEST}"
+          done <<< "${TAGS}"
+
+      - name: Export digest for downstream jobs
+        id: export
+        run: echo "${{ matrix.component }}-digest=${{ steps.build.outputs.digest }}" >> "$GITHUB_OUTPUT"
