@@ -1,0 +1,22 @@
+# Local build outputs
+/.gradle
+/build
+/bin
+/out
+
+# IDE / editor
+.idea
+.vscode
+*.iml
+
+# Git
+.git
+.gitignore
+
+# Docs
+README.md
+HELP.md
+
+# OS noise
+.DS_Store
+Thumbs.db
