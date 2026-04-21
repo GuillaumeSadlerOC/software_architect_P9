@@ -1,0 +1,159 @@
+# =============================================================================
+# MicroCRM — Orchestration
+# =============================================================================
+# Base file — used together with an override:
+#   - dev   : docker compose up           (merges docker-compose.override.yml)
+#   - prod  : docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Three networks isolate traffic:
+#   - edge-net : Traefik <-> front        (reverse-proxied traffic)
+#   - app-net  : back                     (direct access for browser due to
+#                                          hardcoded API URL in config.ts —
+#                                          documented tech debt for SonarQube)
+#   - db-net   : back <-> postgres        (internal: true — DB cannot reach the
+#                                          internet, nor is it host-reachable)
+# =============================================================================
+
+name: orion-microcrm
+
+services:
+  # ---------------------------------------------------------------------------
+  # Reverse proxy — Traefik v3
+  # ---------------------------------------------------------------------------
+  # Auto-discovers services via Docker labels (`traefik.enable=true`).
+  # Dev: plain HTTP on port 8000 + insecure dashboard on 8090 (override.yml).
+  # Prod: HTTPS on 443 + automatic Let's Encrypt certificates (prod.yml).
+  # The Docker socket is mounted read-only — Traefik only READS service
+  # metadata. A socket-proxy (e.g. tecnativa/docker-socket-proxy) is a
+  # stricter alternative, noted as hardening debt in the security plan.
+  traefik:
+    image: traefik:v3.6.13
+    container_name: orion-traefik
+    restart: unless-stopped
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --accesslog=true
+      - --log.level=INFO
+      - --api.dashboard=true
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - edge-net
+    security_opt:
+      - no-new-privileges:true
+
+  # ---------------------------------------------------------------------------
+  # Database — PostgreSQL 16
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: orion-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-microcrm}
+      POSTGRES_USER: ${DB_USER:-microcrm}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is required}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - db-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-microcrm} -d ${DB_NAME:-microcrm}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    # No `ports:` intentionally — DB must NOT be reachable from the host.
+    security_opt:
+      - no-new-privileges:true
+
+  # ---------------------------------------------------------------------------
+  # Backend — Spring Boot 3.2
+  # ---------------------------------------------------------------------------
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/orion-microcrm-back:${IMAGE_TAG:-latest}
+    container_name: orion-back
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-microcrm}
+      DB_USER: ${DB_USER:-microcrm}
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is required}
+      SERVER_PORT: 8080
+    ports:
+      # Direct exposure is required because the Angular frontend's config.ts
+      # hardcodes http://localhost:8080 as the API base URL. The browser
+      # contacts the back bypassing Traefik. Documented as tech debt — a
+      # future commit should route /api through Traefik and use a relative
+      # URL in the front, once SonarQube has flagged the magic string.
+      - "${BACK_PORT:-8080}:8080"
+    networks:
+      - app-net
+      - db-net
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,size=64m
+
+  # ---------------------------------------------------------------------------
+  # Frontend — Angular 17 bundle served by Nginx, fronted by Traefik
+  # ---------------------------------------------------------------------------
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-local}/orion-microcrm-front:${IMAGE_TAG:-latest}
+    container_name: orion-front
+    restart: unless-stopped
+    depends_on:
+      back:
+        condition: service_healthy
+    # No `ports:` — traffic reaches the front exclusively through Traefik.
+    networks:
+      - edge-net
+    labels:
+      # Opt-in routing: exposedbydefault=false in Traefik means only labelled
+      # services are exposed. Base labels cover HTTP routing; prod.yml
+      # overrides them with HTTPS + Let's Encrypt cert resolver.
+      - traefik.enable=true
+      - traefik.docker.network=orion-microcrm_edge-net
+      - traefik.http.routers.front.rule=Host(`${DOMAIN:-localhost}`)
+      - traefik.http.routers.front.entrypoints=web
+      - traefik.http.services.front.loadbalancer.server.port=8080
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx:rw,size=32m
+      - /var/run:rw,size=4m
+      - /tmp:rw,size=16m
+
+networks:
+  edge-net:
+    driver: bridge
+  app-net:
+    driver: bridge
+  db-net:
+    # Internal-only: no gateway, DB cannot egress to the internet.
+    driver: bridge
+    internal: true
+
+volumes:
+  postgres-data:
+    driver: local

@@ -1,0 +1,58 @@
+# =============================================================================
+# Production override — used on the VPS.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Differences vs base:
+#   - Images are pulled from GHCR (no build on target host)
+#   - Resource limits applied
+#   - Logging rotation explicit (json-file, 10MB × 3)
+#   - Frontend bound to 127.0.0.1 behind a host-level reverse proxy (Caddy/Traefik)
+# =============================================================================
+services:
+
+  postgres:
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  back:
+    # Override build: use the image pushed to GHCR.
+    build: !reset null
+    pull_policy: always
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+          memory: 1G
+        reservations:
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  front:
+    build: !reset null
+    pull_policy: always
+    ports: !override
+      # Bind to loopback only — a host-level reverse proxy (Caddy/Nginx on
+      # the VPS) terminates TLS and forwards to 127.0.0.1:8081.
+      - "127.0.0.1:8081:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
