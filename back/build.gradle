@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'jacoco'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'com.adarshr.test-logger' version '4.0.0'
@@ -21,11 +22,28 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'ro.polak:spring-boot-data-fixtures:0.2.0'
+	// --- Infrastructure additions (not bug fixes) ---
+	// Actuator exposes /actuator/health used by the Docker HEALTHCHECK and
+	// by docker-compose to gate service readiness.
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtimeOnly 'org.hsqldb:hsqldb'
+	// PostgreSQL driver is loaded only when SPRING_PROFILES_ACTIVE=prod;
+	// HSQLDB remains the default for dev and test profiles.
+	runtimeOnly 'org.postgresql:postgresql:42.7.3'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+// JaCoCo coverage: XML report path is what SonarCloud expects.
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
