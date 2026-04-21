@@ -140,7 +140,7 @@ jobs:
         uses: bridgecrewio/checkov-action@v12
         with:
           directory: .
-          framework: dockerfile,docker_compose,github_actions
+          framework: dockerfile,yaml,github_actions
           output_format: sarif
           output_file_path: checkov-report
           soft_fail: true   # Report as advisory; tighten over time.
