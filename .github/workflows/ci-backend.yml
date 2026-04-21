@@ -92,7 +92,7 @@ jobs:
         # Uses the scanner's own authenticated connection — no separate API
         # call from a different action (which required Browse permission and
         # failed with HTTP 403 when used with a Project Analysis Token).
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
