@@ -1,0 +1,44 @@
+# =============================================================================
+# Git ignores — monorepo (back = Gradle, front = Angular)
+# =============================================================================
+
+# --- Environment (NEVER commit) ---------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Backend (Gradle / Java) ------------------------------------------------
+back/.gradle/
+back/build/
+back/bin/
+back/out/
+back/*.log
+!back/gradle/wrapper/gradle-wrapper.jar
+
+# --- Frontend (Node / Angular) ----------------------------------------------
+front/node_modules/
+front/dist/
+front/.angular/
+front/coverage/
+front/.nyc_output/
+front/*.log
+front/.env.local
+
+# --- IDE / editor -----------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# --- OS ---------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Security scan / coverage outputs (CI artifacts pulled locally) ---------
+/trivy-report.*
+/dependency-check-report.*
+/sonar-scanner.log
+/.scannerwork/
