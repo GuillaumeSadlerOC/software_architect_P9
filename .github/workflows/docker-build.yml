@@ -50,6 +50,9 @@ jobs:
 
   # ---------------------------------------------------------------------------
   # Build, push, sign — matrix for back & front in parallel.
+  # Platforms differ per component because QEMU-arm64 emulation crashes on
+  # Node's native binaries (esbuild, swc) during `npm ci`, while the Java
+  # backend is CPU-agnostic bytecode and cross-builds without any issue.
   # ---------------------------------------------------------------------------
   build:
     name: Build ${{ matrix.component }}
@@ -62,8 +65,14 @@ jobs:
         include:
           - component: back
             context: ./back
+            platforms: linux/amd64,linux/arm64
           - component: front
             context: ./front
+            # Frontend is amd64-only: Node/esbuild/swc native binaries crash
+            # under QEMU-arm64 emulation on GitHub's x86 runners. Our VPS is
+            # amd64; no real need for arm64 front today. Revisit via native
+            # arm64 runners if arm64 deploy becomes a requirement.
+            platforms: linux/amd64
     outputs:
       back-digest: ${{ steps.export.outputs.back-digest }}
       front-digest: ${{ steps.export.outputs.front-digest }}
@@ -85,7 +94,6 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAMESPACE }}/orion-microcrm-${{ matrix.component }}
-          # The flavor latest=auto rule: only main branch gets :latest.
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -99,12 +107,12 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ${{ matrix.context }}
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ matrix.platforms }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          provenance: true           # SLSA provenance attestation
-          sbom: true                 # SBOM (SPDX format)
+          provenance: true
+          sbom: true
           cache-from: type=gha,scope=${{ matrix.component }}
           cache-to: type=gha,scope=${{ matrix.component }},mode=max
 
@@ -122,7 +130,6 @@ jobs:
           TAGS: ${{ steps.meta.outputs.tags }}
         run: |
           set -euo pipefail
-          # One signature per tag — Sigstore's transparency log records them all.
           while IFS= read -r tag; do
             [ -z "$tag" ] && continue
             echo "Signing ${tag}@${DIGEST}"
