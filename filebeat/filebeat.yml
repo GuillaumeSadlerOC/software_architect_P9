@@ -1,0 +1,29 @@
+# =============================================================================
+# Filebeat configuration — reads Docker container logs on the host and ships
+# them to Logstash.
+# =============================================================================
+
+filebeat.inputs:
+  - type: filestream
+    id: docker-containers
+    paths:
+      - /var/lib/docker/containers/*/*.log
+    parsers:
+      # Docker writes each log line as a JSON envelope ({"log":"...","time":"...","stream":"..."}).
+      # Extract the actual application log line from the "log" field.
+      - ndjson:
+          target: ""
+          overwrite_keys: true
+
+# Enrich events with Docker container metadata (name, image, labels).
+# Filebeat queries /var/run/docker.sock to look up the container for each log
+# file path, so we can later filter in Kibana by container.name.
+processors:
+  - add_docker_metadata:
+      host: "unix:///var/run/docker.sock"
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+# Silence Filebeat's own logs (keeps the terminal readable when tailing).
+logging.level: warning

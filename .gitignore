@@ -42,3 +42,7 @@ desktop.ini
 /dependency-check-report.*
 /sonar-scanner.log
 /.scannerwork/
+
+# ELK local volumes (should not happen with named volumes, safety net)
+elasticsearch-data/
+logstash-data/

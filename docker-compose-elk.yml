@@ -1,0 +1,107 @@
+# =============================================================================
+# Local ELK stack for the P9 project.
+#
+# PURPOSE: aggregate logs from the running application, expose them in Kibana
+# with simple dashboards (error trends, log volume, top loggers).
+#
+# SCOPE: development-only. NOT intended to run in CI, NOT deployed.
+# Launched manually with:  docker compose -f docker-compose-elk.yml up -d
+# Stopped with:            docker compose -f docker-compose-elk.yml down -v
+#
+# This file is INTENTIONALLY separate from the main docker-compose.yml so the
+# app can be run without ELK and vice versa. To share logs across both stacks,
+# the ELK network is explicitly attached as "external" by the app stack (see
+# note at the end of the file).
+# =============================================================================
+
+name: orion-elk
+
+services:
+  # ---------------------------------------------------------------------------
+  # Elasticsearch — the log store.
+  # Single-node mode, security disabled: local dev only.
+  # ---------------------------------------------------------------------------
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.3
+    container_name: elk-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - cluster.name=orion-dev
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks:
+      - elk-net
+
+  # ---------------------------------------------------------------------------
+  # Logstash — the ingestion pipeline.
+  # Pipeline config mounted from ./logstash/logstash.conf (see next commit).
+  # ---------------------------------------------------------------------------
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.15.3
+    container_name: elk-logstash
+    environment:
+      - LS_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.monitoring.enabled=false
+    volumes:
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+    ports:
+      - "5044:5044"   # Beats input (from Filebeat)
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - elk-net
+
+  # ---------------------------------------------------------------------------
+  # Kibana — the visualisation UI.
+  # Accessible at http://localhost:5601 once Elasticsearch is up.
+  # ---------------------------------------------------------------------------
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.3
+    container_name: elk-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_PUBLICBASEURL=http://localhost:5601
+    ports:
+      - "5601:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - elk-net
+
+  # ---------------------------------------------------------------------------
+  # Filebeat — the log shipper.
+  # Reads Docker container logs from the host and forwards them to Logstash.
+  # Lives on the same elk-net so it reaches Logstash by service name.
+  # ---------------------------------------------------------------------------
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.15.3
+    container_name: elk-filebeat
+    user: root   # Required to read /var/lib/docker/containers
+    command: ["--strict.perms=false"]
+    volumes:
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - logstash
+    networks:
+      - elk-net
+
+volumes:
+  es-data:
+
+networks:
+  elk-net:
+    name: elk-net
+    driver: bridge
