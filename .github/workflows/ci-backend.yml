@@ -1,0 +1,109 @@
+name: CI — Backend
+
+# =============================================================================
+# Triggers:
+#   - Push / PR touching back/**  ── normal dev feedback loop
+#   - workflow_call                ── reused by nightly & deploy pipelines
+#   - workflow_dispatch            ── manual runs
+# =============================================================================
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'back/**'
+      - '.github/workflows/ci-backend.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'back/**'
+      - '.github/workflows/ci-backend.yml'
+  workflow_call:
+  workflow_dispatch:
+
+# Cancel superseded runs on the same branch: saves minutes, avoids stale reports.
+concurrency:
+  group: ci-backend-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least-privilege GITHUB_TOKEN: read-only is enough for tests + Sonar scan.
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  test-and-analyze:
+    name: Test & SonarCloud
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: back
+
+    steps:
+      - name: Checkout (full history for Sonar blame)
+        uses: actions/checkout@v4
+        with:
+          # SonarCloud needs full git history to attribute issues correctly.
+          fetch-depth: 0
+
+      - name: Set up JDK 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle (with caching)
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-home-cache-cleanup: true
+
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Build + tests + JaCoCo report
+        # `test` triggers jacocoTestReport via `finalizedBy` (see build.gradle).
+        run: ./gradlew --no-daemon clean build jacocoTestReport
+
+      - name: Upload JUnit test results
+        if: always()     # Upload even on failure so the engineer can triage.
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-test-results
+          path: |
+            back/build/reports/tests/test
+            back/build/test-results/test
+          retention-days: 7
+
+      - name: Upload JaCoCo coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: back/build/reports/jacoco/test
+          retention-days: 7
+
+      - name: SonarCloud scan
+        # Scan runs unconditionally: Sonar tracks coverage AND quality gate.
+        # A failing quality gate can block the PR via branch protection rules.
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # SonarCloud URL is the default — explicit here for self-hosted swaps.
+          SONAR_HOST_URL: https://sonarcloud.io
+        with:
+          projectBaseDir: back
+
+      - name: SonarCloud quality gate check
+        # Fail the job if the quality gate status is not PASSED.
+        # Set continue-on-error: true if you want warnings without blocking.
+        uses: SonarSource/sonarqube-quality-gate-action@v1
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          scanMetadataReportFile: back/.scannerwork/report-task.txt
+
