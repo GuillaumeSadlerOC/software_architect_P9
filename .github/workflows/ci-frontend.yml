@@ -1,0 +1,94 @@
+name: CI — Frontend
+
+# =============================================================================
+# Triggers:
+#   - Push / PR touching front/**  ── normal dev feedback loop
+#   - workflow_call                 ── reused by nightly & deploy pipelines
+#   - workflow_dispatch             ── manual runs
+# =============================================================================
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'front/**'
+      - '.github/workflows/ci-frontend.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'front/**'
+      - '.github/workflows/ci-frontend.yml'
+  workflow_call:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-frontend-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  test-and-analyze:
+    name: Test & SonarCloud
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: front
+
+    steps:
+      - name: Checkout (full history for Sonar blame)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          # Built-in npm cache keyed on the lockfile — no manual actions/cache.
+          cache: npm
+          cache-dependency-path: front/package-lock.json
+
+      - name: Install dependencies (deterministic)
+        # `npm ci` respects package-lock.json exactly — no silent upgrades.
+        run: npm ci --no-audit --no-fund
+
+      - name: Run Karma tests (headless, with coverage)
+        # --browsers uses the custom ChromeHeadlessNoSandbox launcher defined
+        # in karma.conf.js (required on GitHub runners — sandbox disabled).
+        # --code-coverage enables the lcovonly reporter added to karma.conf.js.
+        run: |
+          npx ng test \
+            --watch=false \
+            --browsers=ChromeHeadlessNoSandbox \
+            --code-coverage
+
+      - name: Upload coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-coverage
+          path: front/coverage/microcrm
+          retention-days: 7
+
+      - name: Build production bundle (smoke test)
+        # If `ng build --configuration production` fails here, the Dockerfile
+        # build will too. Catching it at this step gives faster feedback than
+        # failing later during container build.
+        run: npx ng build --configuration production
+
+      - name: SonarCloud scan & wait for quality gate
+        # Same pattern as ci-backend.yml: -Dsonar.qualitygate.wait=true makes
+        # the scanner poll its own task and exit non-zero on RED, avoiding a
+        # separate action that would need Browse permissions on the project.
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+        with:
+          projectBaseDir: front
+          args: >
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.timeout=300
