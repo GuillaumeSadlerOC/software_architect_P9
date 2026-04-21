@@ -27,7 +27,9 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require("path").join(__dirname, "./coverage/microcrm"),
       subdir: ".",
-      reporters: [{ type: "html" }, { type: "text-summary" }],
+      // lcovonly is required by SonarCloud (sonar.javascript.lcov.reportPaths).
+      // html + text-summary are kept for local developer feedback.
+      reporters: [{ type: "html" }, { type: "text-summary" }, { type: "lcovonly" }],
     },
     reporters: ["progress", "kjhtml"],
     browsers: ["ChromeHeadlessNoSandbox", "ChromeHeadless", "Chrome"],
