@@ -32,6 +32,10 @@ dependencies {
 	// HSQLDB remains the default for dev and test profiles.
 	runtimeOnly 'org.postgresql:postgresql:42.7.3'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // ECS-compatible JSON logging (prod profile, for ELK ingestion).
+    // Spring Boot 3.4 has native support, but this project is on 3.2.5,
+    // so we use Elastic's official logback encoder which works on 3.x.
+    implementation 'co.elastic.logging:logback-ecs-encoder:1.6.0'
 }
 
 test {

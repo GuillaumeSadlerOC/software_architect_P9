@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Logback configuration.
+  - 'default' profile: human-readable console (Spring Boot default).
+  - 'prod' profile:    Elastic Common Schema (ECS) JSON, for ELK ingestion.
+-->
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- Default (dev) console appender: standard human-readable pattern. -->
+    <springProfile name="!prod">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <!-- Production profile: ECS JSON output for log aggregation (ELK). -->
+    <springProfile name="prod">
+        <appender name="ECS_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="co.elastic.logging.logback.EcsEncoder">
+                <serviceName>orion-microcrm-back</serviceName>
+                <serviceEnvironment>prod</serviceEnvironment>
+                <includeMarkers>true</includeMarkers>
+                <includeOrigin>false</includeOrigin>
+                <stackTraceAsArray>false</stackTraceAsArray>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="ECS_CONSOLE"/>
+        </root>
+    </springProfile>
+</configuration>
