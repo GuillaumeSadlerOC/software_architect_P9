@@ -21,6 +21,7 @@ on:
     # become vulnerable overnight without any code change.
     - cron: '0 2 * * *'
   workflow_dispatch:
+  workflow_call:
 
 concurrency:
   group: security-${{ github.ref }}
