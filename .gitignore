@@ -46,3 +46,7 @@ desktop.ini
 # ELK local volumes (should not happen with named volumes, safety net)
 elasticsearch-data/
 logstash-data/
+
+# Database backups — never committed (may contain user data, can be large)
+/backups/
+*.dump
