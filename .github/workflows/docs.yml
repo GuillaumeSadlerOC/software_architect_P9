@@ -1,0 +1,71 @@
+name: Documentation — PDF generation
+
+# =============================================================================
+# Converts docs/documentation.md to a styled PDF using Pandoc + XeLaTeX.
+#
+# Triggers:
+#   - Push on main touching docs/**            -> regenerate on doc change
+#   - Release published                        -> attach PDF to the release
+#   - workflow_dispatch                        -> manual regeneration
+#
+# The PDF is uploaded as a workflow artifact (90 days retention). On a
+# release, it is additionally attached to the GitHub Release page.
+# =============================================================================
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+  release:
+    types: [published]
+  workflow_dispatch:
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    name: Build documentation PDF
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    container:
+      image: pandoc/latex:3.5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate PDF
+        # Uses LaTeX default Latin Modern font (guaranteed in the pandoc/latex
+        # image). No explicit mainfont directive to avoid fontspec resolution
+        # issues. The header.tex include airs out table rendering.
+        run: |
+          mkdir -p dist
+          pandoc docs/documentation.md \
+            --output=dist/documentation.pdf \
+            --pdf-engine=xelatex \
+            --toc \
+            --number-sections \
+            --highlight-style=tango \
+            --include-in-header=docs/header.tex \
+            -V linkcolor=NavyBlue \
+            -V urlcolor=NavyBlue \
+            -V geometry:margin=2.5cm
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-pdf
+          path: dist/documentation.pdf
+          retention-days: 90
+
+      - name: Attach PDF to GitHub Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/documentation.pdf

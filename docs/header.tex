@@ -1,0 +1,24 @@
+% =============================================================================
+% Header LaTeX pour la documentation technique d'Orion MicroCRM.
+% Inclus par Pandoc via --include-in-header=docs/header.tex
+%
+% Objectif: améliorer la lisibilité des tables en aérant verticalement les
+% lignes et horizontalement les colonnes.
+% =============================================================================
+ 
+% Facteur de hauteur des lignes de table.
+\renewcommand{\arraystretch}{1.35}
+ 
+% Padding horizontal dans les cellules.
+\setlength{\tabcolsep}{10pt}
+ 
+% Règles horizontales booktabs (gold standard typographique).
+\usepackage{booktabs}
+ 
+% Couleur d'accent pour les en-têtes de table.
+\usepackage{xcolor}
+\usepackage{colortbl}
+ 
+% Typographie du code inline.
+\usepackage{fancyvrb}
+\fvset{fontsize=\small}
