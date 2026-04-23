@@ -1,0 +1,47 @@
+{
+    "paging": {
+        "pageIndex": 1,
+        "pageSize": 100,
+        "total": 1
+    },
+    "hotspots": [
+        {
+            "key": "AZ2wCXhKJB5bpIwVGq6e",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/index.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "securityCategory": "others",
+            "vulnerabilityProbability": "LOW",
+            "status": "TO_REVIEW",
+            "line": 9,
+            "message": "Make sure not using resource integrity feature is safe here.",
+            "assignee": "AZ2vFZtb2Ek68EZ-adIN",
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "textRange": {
+                "startLine": 9,
+                "endLine": 12,
+                "startOffset": 4,
+                "endOffset": 6
+            },
+            "flows": [],
+            "ruleKey": "Web:S5725"
+        }
+    ],
+    "components": [
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/index.html",
+            "qualifier": "FIL",
+            "name": "index.html",
+            "longName": "src/index.html",
+            "path": "src/index.html"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front",
+            "qualifier": "TRK",
+            "name": "Orion MicroCRM \u2014 Front",
+            "longName": "Orion MicroCRM \u2014 Front"
+        }
+    ]
+}

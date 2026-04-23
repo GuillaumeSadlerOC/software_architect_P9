@@ -1,0 +1,2056 @@
+{
+    "total": 46,
+    "p": 1,
+    "ps": 100,
+    "paging": {
+        "pageIndex": 1,
+        "pageSize": 100,
+        "total": 46
+    },
+    "effortTotal": 93,
+    "debtTotal": 93,
+    "issues": [
+        {
+            "key": "AZ2wCXggJB5bpIwVGq6I",
+            "rule": "css:S4667",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/app.component.css",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 1,
+            "textRange": {
+                "startLine": 1,
+                "endLine": 1,
+                "startOffset": 0,
+                "endOffset": 0
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected empty source",
+            "effort": "1min",
+            "debt": "1min",
+            "tags": [],
+            "creationDate": "2026-04-21T12:34:35+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfbJB5bpIwVGq5y",
+            "rule": "css:S4667",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/main-dashboard/main-dashboard.component.css",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 1,
+            "textRange": {
+                "startLine": 1,
+                "endLine": 1,
+                "startOffset": 0,
+                "endOffset": 0
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected empty source",
+            "effort": "1min",
+            "debt": "1min",
+            "tags": [],
+            "creationDate": "2026-04-21T12:34:35+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgMJB5bpIwVGq6C",
+            "rule": "css:S4667",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.css",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 1,
+            "textRange": {
+                "startLine": 1,
+                "endLine": 1,
+                "startOffset": 0,
+                "endOffset": 0
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected empty source",
+            "effort": "1min",
+            "debt": "1min",
+            "tags": [],
+            "creationDate": "2026-04-21T12:34:35+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXf2JB5bpIwVGq6A",
+            "rule": "css:S4667",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.css",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 1,
+            "textRange": {
+                "startLine": 1,
+                "endLine": 1,
+                "startOffset": 0,
+                "endOffset": 0
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected empty source",
+            "effort": "1min",
+            "debt": "1min",
+            "tags": [],
+            "creationDate": "2026-04-21T12:34:35+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXhBJB5bpIwVGq6d",
+            "rule": "typescript:S1128",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/app.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 2,
+            "hash": "ee9a832e76ce34c12668357eba46e143",
+            "textRange": {
+                "startLine": 2,
+                "endLine": 2,
+                "startOffset": 9,
+                "endOffset": 15
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Remove this unused import of 'Router'.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2015",
+                "type-dependent",
+                "unused"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXdjJB5bpIwVGq5w",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/main-dashboard/main-dashboard.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 18,
+            "hash": "0fe4bfb413015de318b38af30c85177b",
+            "textRange": {
+                "startLine": 18,
+                "endLine": 18,
+                "startOffset": 14,
+                "endOffset": 35
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'personService: PersonService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXdjJB5bpIwVGq5x",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/main-dashboard/main-dashboard.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 18,
+            "hash": "0fe4bfb413015de318b38af30c85177b",
+            "textRange": {
+                "startLine": 18,
+                "endLine": 18,
+                "startOffset": 52,
+                "endOffset": 79
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'organizationService: OrganizationService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgAJB5bpIwVGq6B",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 32,
+            "hash": "16ad718c8925dded65485f1662ed1d98",
+            "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgVJB5bpIwVGq6D",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 26,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 14,
+                "endOffset": 27
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'route: ActivatedRoute' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgVJB5bpIwVGq6E",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 26,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 45,
+                "endOffset": 66
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'personService: PersonService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgVJB5bpIwVGq6F",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 26,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 83,
+                "endOffset": 110
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'organizationService: OrganizationService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgVJB5bpIwVGq6G",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 26,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 133,
+                "endOffset": 147
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'router: Router' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgVJB5bpIwVGq6H",
+            "rule": "typescript:S7773",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 36,
+            "hash": "989792358345e7ca43030beb21069538",
+            "textRange": {
+                "startLine": 36,
+                "endLine": 36,
+                "startOffset": 20,
+                "endOffset": 28
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Prefer `Number.parseInt` over `parseInt`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "convention",
+                "es2015"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CONVENTIONAL",
+            "cleanCodeAttributeCategory": "CONSISTENT",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                },
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6R",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 10,
+            "hash": "9360b5a16f3c702a8011ecc0dbca92ef",
+            "textRange": {
+                "startLine": 10,
+                "endLine": 10,
+                "startOffset": 14,
+                "endOffset": 28
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'client: HttpClient' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6S",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 14,
+            "hash": "0a549b9ddef8a20def651727dbacf62c",
+            "textRange": {
+                "startLine": 14,
+                "endLine": 14,
+                "startOffset": 21,
+                "endOffset": 81
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6T",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 22,
+            "hash": "f5bd9bdc8ecc23b8564c41eec45adf4d",
+            "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 21,
+                "endOffset": 75
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6U",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 28,
+            "hash": "7dcf91e0c1fe6794945001df8fe2f3d5",
+            "textRange": {
+                "startLine": 28,
+                "endLine": 28,
+                "startOffset": 21,
+                "endOffset": 89
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6V",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 35,
+            "hash": "ad836c331d0b4428fddab74e60c48aed",
+            "textRange": {
+                "startLine": 35,
+                "endLine": 35,
+                "startOffset": 21,
+                "endOffset": 84
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6W",
+            "rule": "typescript:S3626",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 37,
+            "hash": "e70c4df10ef0983b9c8c31bd06b2a2c3",
+            "textRange": {
+                "startLine": 37,
+                "endLine": 37,
+                "startOffset": 4,
+                "endOffset": 10
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Remove this redundant jump.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy",
+                "redundant"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6X",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 43,
+            "hash": "6ee5baee1d2b35cd085e6fde0a9f90de",
+            "textRange": {
+                "startLine": 43,
+                "endLine": 45,
+                "startOffset": 17,
+                "endOffset": 8
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6Y",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 47,
+            "hash": "0006004a861c2cb5f9ae33bd50d61cbd",
+            "textRange": {
+                "startLine": 47,
+                "endLine": 49,
+                "startOffset": 17,
+                "endOffset": 8
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6Z",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 61,
+            "hash": "d1be7e254108b0692e873c14c3ed51a4",
+            "textRange": {
+                "startLine": 61,
+                "endLine": 65,
+                "startOffset": 21,
+                "endOffset": 5
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6a",
+            "rule": "typescript:S3626",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 67,
+            "hash": "e70c4df10ef0983b9c8c31bd06b2a2c3",
+            "textRange": {
+                "startLine": 67,
+                "endLine": 67,
+                "startOffset": 4,
+                "endOffset": 10
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Remove this redundant jump.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy",
+                "redundant"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6b",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 71,
+            "hash": "538a53b2da297fad0fa53b1b18b51c8f",
+            "textRange": {
+                "startLine": 71,
+                "endLine": 73,
+                "startOffset": 21,
+                "endOffset": 5
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXg3JB5bpIwVGq6c",
+            "rule": "typescript:S3626",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 75,
+            "hash": "e70c4df10ef0983b9c8c31bd06b2a2c3",
+            "textRange": {
+                "startLine": 75,
+                "endLine": 75,
+                "startOffset": 4,
+                "endOffset": 10
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Remove this redundant jump.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy",
+                "redundant"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq5z",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 34,
+            "hash": "9af650e471227c6b1e75764bdbe5b194",
+            "textRange": {
+                "startLine": 34,
+                "endLine": 34,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq50",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 60,
+            "hash": "658fa8ac4d8358368fc7daf9ec13cca4",
+            "textRange": {
+                "startLine": 60,
+                "endLine": 60,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq51",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 86,
+            "hash": "e2c276f5467145e1b094447ecedd6b94",
+            "textRange": {
+                "startLine": 86,
+                "endLine": 86,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq52",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 111,
+            "hash": "9c4b85230a1ef676a44578a0df3cb280",
+            "textRange": {
+                "startLine": 111,
+                "endLine": 111,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq53",
+            "rule": "Web:S6853",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 138,
+            "hash": "b52f9f079574f5d50cdfb7094297990a",
+            "textRange": {
+                "startLine": 138,
+                "endLine": 138,
+                "startOffset": 10,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "A form label must be associated with a control and have accessible text.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "LOGICAL",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq54",
+            "rule": "Web:MouseEventWithoutKeyboardEquivalentCheck",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 171,
+            "hash": "8a6c065819987cf2b44de8c2f5493486",
+            "textRange": {
+                "startLine": 171,
+                "endLine": 174,
+                "startOffset": 14,
+                "endOffset": 17
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <span> tag.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "BUG",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "COMPLETE",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXflJB5bpIwVGq55",
+            "rule": "Web:S5256",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 179,
+            "hash": "cff68aa749f600501d2b7cc09721775a",
+            "textRange": {
+                "startLine": 179,
+                "endLine": 179,
+                "startOffset": 8,
+                "endOffset": 42
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Add \"<th>\" headers to this \"<table>\".",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "accessibility",
+                "wcag2-a"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "BUG",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "COMPLETE",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq56",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 32,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 14,
+                "endOffset": 27
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'route: ActivatedRoute' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq57",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 32,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 45,
+                "endOffset": 66
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'personService: PersonService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq58",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 32,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 83,
+                "endOffset": 110
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'organizationService: OrganizationService' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq59",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 32,
+            "hash": "8bddc5c80fdad35fa13f428ae513e3b6",
+            "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 133,
+                "endOffset": 147
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'router: Router' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq5-",
+            "rule": "typescript:S7059",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 33,
+            "hash": "89ac81582007611c3c4a10ce41bc8042",
+            "textRange": {
+                "startLine": 33,
+                "endLine": 33,
+                "startOffset": 4,
+                "endOffset": 79
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Refactor this asynchronous operation outside of the constructor.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "MODULAR",
+            "cleanCodeAttributeCategory": "ADAPTABLE",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "HIGH"
+                },
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXfuJB5bpIwVGq5_",
+            "rule": "typescript:S7773",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 43,
+            "hash": "607f4aae709411a30857abae72e33120",
+            "textRange": {
+                "startLine": 43,
+                "endLine": 43,
+                "startOffset": 23,
+                "endOffset": 31
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Prefer `Number.parseInt` over `parseInt`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "convention",
+                "es2015"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CONVENTIONAL",
+            "cleanCodeAttributeCategory": "CONSISTENT",
+            "impacts": [
+                {
+                    "softwareQuality": "RELIABILITY",
+                    "severity": "MEDIUM"
+                },
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6J",
+            "rule": "typescript:S2933",
+            "severity": "MAJOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 9,
+            "hash": "9360b5a16f3c702a8011ecc0dbca92ef",
+            "textRange": {
+                "startLine": 9,
+                "endLine": 9,
+                "startOffset": 14,
+                "endOffset": 28
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Member 'client: HttpClient' is never reassigned; mark it as `readonly`.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "confusing",
+                "type-dependent"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "MEDIUM"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6K",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 13,
+            "hash": "3e51048ca05a31ce39762aea0c2c1f25",
+            "textRange": {
+                "startLine": 13,
+                "endLine": 13,
+                "startOffset": 21,
+                "endOffset": 75
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6L",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 21,
+            "hash": "d3c1819448d999962407c66fde8515db",
+            "textRange": {
+                "startLine": 21,
+                "endLine": 21,
+                "startOffset": 21,
+                "endOffset": 69
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6M",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 28,
+            "hash": "aa6f6d6131e4dff2501e729bdf2f3b97",
+            "textRange": {
+                "startLine": 28,
+                "endLine": 28,
+                "startOffset": 21,
+                "endOffset": 89
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6N",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 35,
+            "hash": "692f5eee6fff30f7a043fb6d72e04b62",
+            "textRange": {
+                "startLine": 35,
+                "endLine": 35,
+                "startOffset": 21,
+                "endOffset": 78
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6O",
+            "rule": "typescript:S3626",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 37,
+            "hash": "e70c4df10ef0983b9c8c31bd06b2a2c3",
+            "textRange": {
+                "startLine": 37,
+                "endLine": 37,
+                "startOffset": 4,
+                "endOffset": 10
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Remove this redundant jump.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy",
+                "redundant"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6P",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 43,
+            "hash": "2fa60055659f3eaf7cdc6c3f45241089",
+            "textRange": {
+                "startLine": 43,
+                "endLine": 49,
+                "startOffset": 17,
+                "endOffset": 8
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2wCXgrJB5bpIwVGq6Q",
+            "rule": "typescript:S4123",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "project": "guillaumesadleroc_orion-microcrm-front",
+            "line": 51,
+            "hash": "4292fa3ab44973c1ee6be57ef5cb1877",
+            "textRange": {
+                "startLine": 51,
+                "endLine": 57,
+                "startOffset": 17,
+                "endOffset": 8
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "es2017"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:34:35+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Front",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "5d31c008-c6b0-41a3-a47c-7f589f9bcb90",
+            "lastChangeSource": "ANALYSIS"
+        }
+    ],
+    "components": [
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/organization.service.ts",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5l",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "organization.service.ts",
+            "longName": "src/app/organization.service.ts",
+            "path": "src/app/organization.service.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/main-dashboard/main-dashboard.component.ts",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5S",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "main-dashboard.component.ts",
+            "longName": "src/app/main-dashboard/main-dashboard.component.ts",
+            "path": "src/app/main-dashboard/main-dashboard.component.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/main-dashboard/main-dashboard.component.css",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5T",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "main-dashboard.component.css",
+            "longName": "src/app/main-dashboard/main-dashboard.component.css",
+            "path": "src/app/main-dashboard/main-dashboard.component.css"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/app.component.ts",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5p",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "app.component.ts",
+            "longName": "src/app/app.component.ts",
+            "path": "src/app/app.component.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.html",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5X",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "person-details.component.html",
+            "longName": "src/app/person-details/person-details.component.html",
+            "path": "src/app/person-details/person-details.component.html"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.ts",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5Y",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "person-details.component.ts",
+            "longName": "src/app/person-details/person-details.component.ts",
+            "path": "src/app/person-details/person-details.component.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/person-details/person-details.component.css",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5Z",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "person-details.component.css",
+            "longName": "src/app/person-details/person-details.component.css",
+            "path": "src/app/person-details/person-details.component.css"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.html",
+            "uuid": "AZ2wCXHVJB5bpIwVGq5c",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "organization-details.component.html",
+            "longName": "src/app/organization-details/organization-details.component.html",
+            "path": "src/app/organization-details/organization-details.component.html"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front",
+            "uuid": "AZ2v-WcT7BKANeQPf5Cw",
+            "enabled": true,
+            "qualifier": "TRK",
+            "name": "Orion MicroCRM \u2014 Front",
+            "longName": "Orion MicroCRM \u2014 Front"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.ts",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5f",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "organization-details.component.ts",
+            "longName": "src/app/organization-details/organization-details.component.ts",
+            "path": "src/app/organization-details/organization-details.component.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/organization-details/organization-details.component.css",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5e",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "organization-details.component.css",
+            "longName": "src/app/organization-details/organization-details.component.css",
+            "path": "src/app/organization-details/organization-details.component.css"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/person.service.ts",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5j",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "person.service.ts",
+            "longName": "src/app/person.service.ts",
+            "path": "src/app/person.service.ts"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-front:src/app/app.component.css",
+            "uuid": "AZ2wCXHWJB5bpIwVGq5h",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "app.component.css",
+            "longName": "src/app/app.component.css",
+            "path": "src/app/app.component.css"
+        }
+    ],
+    "organizations": [
+        {
+            "key": "guillaumesadleroc",
+            "name": "Guillaume"
+        }
+    ],
+    "facets": []
+}

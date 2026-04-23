@@ -1,0 +1,267 @@
+{
+    "total": 5,
+    "p": 1,
+    "ps": 100,
+    "paging": {
+        "pageIndex": 1,
+        "pageSize": 100,
+        "total": 5
+    },
+    "effortTotal": 11,
+    "debtTotal": 11,
+    "issues": [
+        {
+            "key": "AZ2v_VDE-kqHdEv1aNhL",
+            "rule": "java:S1170",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/InitialDataFixture.java",
+            "project": "guillaumesadleroc_orion-microcrm-back",
+            "line": 15,
+            "hash": "766e6ae7949c708c38a30dbf83bcb632",
+            "textRange": {
+                "startLine": 15,
+                "endLine": 15,
+                "startOffset": 35,
+                "endOffset": 51
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Make this final field static too.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "convention"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:21:26+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "EFFICIENT",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Back",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "79fb838c-0175-43fe-aef9-e4862fade168",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2v_VDE-kqHdEv1aNhM",
+            "rule": "java:S1170",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/InitialDataFixture.java",
+            "project": "guillaumesadleroc_orion-microcrm-back",
+            "line": 18,
+            "hash": "7f04c6810719bda961dfa690331aabe0",
+            "textRange": {
+                "startLine": 18,
+                "endLine": 18,
+                "startOffset": 41,
+                "endOffset": 63
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Make this final field static too.",
+            "effort": "2min",
+            "debt": "2min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "convention"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:21:26+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "EFFICIENT",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Back",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "79fb838c-0175-43fe-aef9-e4862fade168",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2v_VC8-kqHdEv1aNhJ",
+            "rule": "java:S2293",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/Organization.java",
+            "project": "guillaumesadleroc_orion-microcrm-back",
+            "line": 35,
+            "hash": "755e6ffbd0ac5d8c3f678590ff33ceac",
+            "textRange": {
+                "startLine": 35,
+                "endLine": 35,
+                "startOffset": 34,
+                "endOffset": 42
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Replace the type specification in this constructor call with the diamond operator (\"<>\").",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:21:26+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Back",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "79fb838c-0175-43fe-aef9-e4862fade168",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2v_VC8-kqHdEv1aNhK",
+            "rule": "java:S2293",
+            "severity": "MINOR",
+            "component": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/Organization.java",
+            "project": "guillaumesadleroc_orion-microcrm-back",
+            "line": 43,
+            "hash": "755e6ffbd0ac5d8c3f678590ff33ceac",
+            "textRange": {
+                "startLine": 43,
+                "endLine": 43,
+                "startOffset": 34,
+                "endOffset": 42
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Replace the type specification in this constructor call with the diamond operator (\"<>\").",
+            "effort": "1min",
+            "debt": "1min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "clumsy"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:21:26+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "CLEAR",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Back",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "79fb838c-0175-43fe-aef9-e4862fade168",
+            "lastChangeSource": "ANALYSIS"
+        },
+        {
+            "key": "AZ2v_U_J-kqHdEv1aNhI",
+            "rule": "java:S1186",
+            "severity": "CRITICAL",
+            "component": "guillaumesadleroc_orion-microcrm-back:src/test/java/com/openclassroom/devops/orion/microcrm/MicroCRMApplicationTests.java",
+            "project": "guillaumesadleroc_orion-microcrm-back",
+            "line": 10,
+            "hash": "9da319abd9f20a8cf2db6edcaf58d7f1",
+            "textRange": {
+                "startLine": 10,
+                "endLine": 10,
+                "startOffset": 6,
+                "endOffset": 18
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.",
+            "effort": "5min",
+            "debt": "5min",
+            "assignee": "GuillaumeSadlerOC-nYeT2@github",
+            "tags": [
+                "suspicious"
+            ],
+            "creationDate": "2026-04-21T05:36:49+0000",
+            "updateDate": "2026-04-21T12:21:26+0000",
+            "type": "CODE_SMELL",
+            "organization": "guillaumesadleroc",
+            "cleanCodeAttribute": "COMPLETE",
+            "cleanCodeAttributeCategory": "INTENTIONAL",
+            "impacts": [
+                {
+                    "softwareQuality": "MAINTAINABILITY",
+                    "severity": "HIGH"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "projectName": "Orion MicroCRM \u2014 Back",
+            "internalTags": [],
+            "lastChangeAnalysisUuid": "79fb838c-0175-43fe-aef9-e4862fade168",
+            "lastChangeSource": "ANALYSIS"
+        }
+    ],
+    "components": [
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-back:src/test/java/com/openclassroom/devops/orion/microcrm/MicroCRMApplicationTests.java",
+            "uuid": "AZ2v_UqO-kqHdEv1aNg9",
+            "enabled": true,
+            "qualifier": "UTS",
+            "name": "MicroCRMApplicationTests.java",
+            "longName": "src/test/java/com/openclassroom/devops/orion/microcrm/MicroCRMApplicationTests.java",
+            "path": "src/test/java/com/openclassroom/devops/orion/microcrm/MicroCRMApplicationTests.java"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/Organization.java",
+            "uuid": "AZ2v_UqO-kqHdEv1aNhC",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "Organization.java",
+            "longName": "src/main/java/com/openclassroom/devops/orion/microcrm/Organization.java",
+            "path": "src/main/java/com/openclassroom/devops/orion/microcrm/Organization.java"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-back",
+            "uuid": "AZ2v-MW7DtGFDJVbN-yq",
+            "enabled": true,
+            "qualifier": "TRK",
+            "name": "Orion MicroCRM \u2014 Back",
+            "longName": "Orion MicroCRM \u2014 Back"
+        },
+        {
+            "organization": "guillaumesadleroc",
+            "key": "guillaumesadleroc_orion-microcrm-back:src/main/java/com/openclassroom/devops/orion/microcrm/InitialDataFixture.java",
+            "uuid": "AZ2v_UqO-kqHdEv1aNhE",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "InitialDataFixture.java",
+            "longName": "src/main/java/com/openclassroom/devops/orion/microcrm/InitialDataFixture.java",
+            "path": "src/main/java/com/openclassroom/devops/orion/microcrm/InitialDataFixture.java"
+        }
+    ],
+    "organizations": [
+        {
+            "key": "guillaumesadleroc",
+            "name": "Guillaume"
+        }
+    ],
+    "facets": []
+}
