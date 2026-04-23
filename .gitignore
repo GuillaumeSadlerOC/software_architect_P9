@@ -50,3 +50,6 @@ logstash-data/
 # Database backups — never committed (may contain user data, can be large)
 /backups/
 *.dump
+
+# Locally-generated PDFs from 'pandoc/latex' container runs
+dist/
