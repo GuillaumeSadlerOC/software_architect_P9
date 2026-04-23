@@ -1,0 +1,22 @@
+# =============================================================================
+# Gitleaks configuration for the Orion MicroCRM project.
+#
+# Extends the default ruleset and allowlists known false positives.
+# =============================================================================
+
+# Extends the default config shipped with Gitleaks (keeps all bundled rules).
+[extend]
+useDefault = true
+
+# Allowlist — known false positives reviewed and documented.
+[allowlist]
+description = "Known false positives for this repository"
+
+paths = [
+    # SonarCloud issue/hotspot exports. The "key" fields are internal issue
+    # identifiers (e.g. "AZ2v_VDE-kqHdEv1aNhL"), not API secrets. They are
+    # already public via the SonarCloud API since both analyzed projects are
+    # public. Archived here as evidence for section 5 of the technical
+    # documentation.
+    '''misc/sonar-exports/.*\.json$''',
+]
