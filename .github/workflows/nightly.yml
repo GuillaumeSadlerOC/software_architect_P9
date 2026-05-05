@@ -15,8 +15,10 @@ name: Nightly
 #   - Provide a reliable daily data point for KPI dashboards and trends.
 # =============================================================================
 on:
-  schedule:
-    - cron: '30 2 * * *'   # 02:30 UTC every day
+  # Schedule disabled post-defense (2026-05-05).
+  # The project is in archive mode — no need to consume Actions minutes
+  # schedule:
+  #  - cron: '30 2 * * *'   # 02:30 UTC every day
   workflow_dispatch:
 
 concurrency:

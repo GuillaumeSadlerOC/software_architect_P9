@@ -16,10 +16,12 @@ on:
     branches: [main, develop]
   pull_request:
     branches: [main, develop]
-  schedule:
+  # Schedule disabled post-defense (2026-05-05).
+  # The project is in archive mode — no need to consume Actions minutes
+  # schedule:
     # Nightly scan: dependency DBs are updated daily — a past-clean repo can
     # become vulnerable overnight without any code change.
-    - cron: '0 2 * * *'
+  #  - cron: '0 2 * * *'
   workflow_dispatch:
   workflow_call:
 
